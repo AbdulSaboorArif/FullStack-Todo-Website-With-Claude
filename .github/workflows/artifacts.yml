@@ -1,0 +1,30 @@
+name: Next JS Project with Cashing and Artifacts
+
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on:
+      - ubuntu-latest
+
+    steps:
+      - name: Check-Out-Repo-Clone
+        uses: actions/checkout@v6.1.0
+        
+      - name: Node JS Setup for Clone
+        uses: actions/setup-node@v6.5.0
+        with:
+          node-version: 22.x
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Next JS APP
+        run: npm run build
+        
+      - name: Upload Build on Artifacts
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: nextjs-build
+          
