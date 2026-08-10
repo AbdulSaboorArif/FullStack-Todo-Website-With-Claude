@@ -8,6 +8,15 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
             A Beautiful, Simple Homepage
           </h1>
+
+
+
+
+
+
+
+
+          
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Clean starter layout for a Next.js app — responsive, accessible,
             and minimal so you can focus on building.
