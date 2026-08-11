@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Seerah Q&amp;A - Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed": "#002117",
+                        "secondary-fixed": "#d5e6df",
+                        "surface-bright": "#faf9f4",
+                        "on-secondary-fixed-variant": "#3b4a44",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#dbdad5",
+                        "primary-fixed": "#b0f0d6",
+                        "primary": "#003527",
+                        "tertiary": "#4a2400",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "on-primary-container": "#80bea6",
+                        "surface-container-low": "#f5f4ef",
+                        "on-tertiary-fixed": "#2f1500",
+                        "background": "#faf9f4",
+                        "on-surface-variant": "#404944",
+                        "tertiary-fixed": "#ffdcc3",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#064e3b",
+                        "on-secondary-fixed": "#101e1a",
+                        "surface-variant": "#e3e3de",
+                        "inverse-primary": "#95d3ba",
+                        "surface": "#faf9f4",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#95d3ba",
+                        "surface-tint": "#2b6954",
+                        "on-background": "#1b1c19",
+                        "on-primary-fixed-variant": "#0b513d",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-secondary-container": "#566660",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#707974",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1b1c19",
+                        "outline-variant": "#bfc9c3",
+                        "on-tertiary-container": "#ff9939",
+                        "surface-container-high": "#e9e8e3",
+                        "secondary-container": "#d3e3dc",
+                        "inverse-on-surface": "#f2f1ec",
+                        "tertiary-container": "#6a3700",
+                        "secondary": "#52625c",
+                        "surface-container-highest": "#e3e3de",
+                        "surface-container": "#efeee9",
+                        "inverse-surface": "#30312e",
+                        "secondary-fixed-dim": "#bacac3"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "base-unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "stack-md": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "20px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "label-sm": ["12px", { lineHeight: "1.2", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.7", fontWeight: "400" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-md": ["14px", { lineHeight: "1.2", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }]
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-hidden selection:bg-primary-container selection:text-on-primary-container h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter h-16 max-w-container-max mx-auto bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-bold text-primary">Seerah Q&amp;A</span>
+</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Sources</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-full font-label-md text-label-md hover:bg-primary transition-colors duration-200">
+                Ask a Question
+            </button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors duration-200 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</header>
+<!-- Main Layout Container -->
+<div class="flex-1 flex pt-16 overflow-hidden h-[calc(100vh-64px)] relative w-full max-w-container-max mx-auto">
+<!-- Chat Area (Center) -->
+<main class="flex-1 flex flex-col h-full bg-surface-bright relative">
+<!-- Disclaimer Banner -->
+<div class="bg-surface-container py-3 px-gutter border-b border-outline-variant flex items-center justify-center gap-2 z-10 shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-outline text-[18px]">info</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+                    Disclaimer: AI-generated content; no-fatwa policy applies. Verify critical information.
+                </p>
+</div>
+<!-- Chat Scroll Area -->
+<div class="flex-1 overflow-y-auto px-gutter md:px-margin-desktop py-stack-md flex flex-col gap-stack-md scroll-smooth pb-32">
+<!-- Welcome / Initial State Context (Optional, kept minimal) -->
+<div class="text-center my-stack-sm">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Today</span>
+</div>
+<!-- User Message -->
+<div class="flex flex-col items-end w-full group">
+<div class="max-w-[85%] md:max-w-[70%]">
+<div class="bg-surface-container-low border border-outline-variant rounded-2xl rounded-tr-none px-6 py-4 shadow-sm">
+<p class="font-body-md text-body-md text-on-surface">
+                                What does the approved Seerah content say about the Prophet's character ﷺ?
+                            </p>
+</div>
+<div class="mt-1 flex justify-end">
+<span class="font-label-sm text-label-sm text-outline">You • 10:42 AM</span>
+</div>
+</div>
+</div>
+<!-- AI Response -->
+<div class="flex flex-col items-start w-full group">
+<div class="flex gap-4 max-w-[95%] md:max-w-[85%]">
+<!-- AI Avatar -->
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-1 shadow-sm border border-primary-container/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-surface-container-lowest border border-outline-variant border-l-4 border-l-secondary rounded-2xl rounded-tl-none px-6 py-5 shadow-sm">
+<p class="font-body-md text-body-md text-on-surface mb-4 leading-relaxed">
+                                    Based on the approved Shamail sources, the character of the Prophet ﷺ is described with profound detail, emphasizing a balance of approachability, dignity, and immense compassion. Here are key characteristics highlighted in the verified corpus:
+                                </p>
+<ul class="space-y-3 mb-4 list-none pl-1">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1 text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Profound Humility:</strong> He would mend his own shoes, patch his garments, and assist his household in daily chores, never elevating himself above his companions in physical labor.
+                                        </span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1 text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Equanimity in Interaction:</strong> He gave his full attention to whomever he spoke with, turning his entire body toward them, ensuring every individual felt they were the most important person to him.
+                                        </span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-1 text-[20px]">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface-variant">
+<strong class="text-on-surface font-semibold">Generosity and Restraint:</strong> He was known to never say "no" to a request if he had the means to fulfill it, yet he lived a life of deliberate simplicity, often going days without lighting a fire for cooking.
+                                        </span>
+</li>
+</ul>
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                                    His character was repeatedly described by Aisha (RA) as "the Quran walking on earth," embodying its injunctions perfectly.
+                                </p>
+</div>
+<!-- Source Citation Component -->
+<div class="flex items-center gap-3 bg-secondary-container/30 px-4 py-2 rounded-lg w-fit border border-secondary-container/50">
+<span class="material-symbols-outlined text-secondary text-[18px]">menu_book</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container">
+                                    Sources: [ Shamail • Entry #42 ]
+                                </span>
+<button class="flex items-center gap-1 ml-2 text-primary hover:text-primary-container transition-colors duration-200 group/btn">
+<span class="font-label-sm text-label-sm underline decoration-primary/30 group-hover/btn:decoration-primary">View Source</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Typing Indicator (Simulated) -->
+<div class="flex flex-col items-start w-full opacity-0 animate-pulse hidden">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-outline">more_horiz</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Fixed Bottom Chat Composer -->
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-surface-bright via-surface-bright to-transparent pt-stack-md pb-stack-sm px-gutter md:px-margin-desktop z-20">
+<div class="max-w-3xl mx-auto">
+<div class="relative flex items-end bg-surface-container-lowest rounded-3xl border border-outline-variant shadow-[0_4px_20px_rgba(6,78,59,0.04)] focus-within:border-primary focus-within:shadow-[0_4px_20px_rgba(6,78,59,0.1)] transition-all duration-300 overflow-hidden group">
+<!-- Left Action -->
+<button class="p-3 m-1 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container shrink-0 self-end">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">attach_file</span>
+</button>
+<!-- Input -->
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none py-4 px-2 font-body-md text-body-md text-on-surface placeholder:text-outline min-h-[56px] max-h-32 scrollbar-hide" placeholder="Ask about the Seerah..." rows="1"></textarea>
+<!-- Right Actions -->
+<div class="flex items-center p-2 self-end shrink-0 gap-1">
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary rounded-full hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_upward</span>
+</button>
+</div>
+</div>
+<div class="text-center mt-2">
+<span class="font-label-sm text-label-sm text-outline-variant text-[10px]">Answers are generated based on verified sources.</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Right SideNavBar (Approved Sources) -->
+<aside class="hidden lg:flex flex-col w-80 bg-surface-container-low border-l border-outline-variant z-40 shrink-0 h-full">
+<div class="p-gutter border-b border-outline-variant">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined">library_books</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Approved Sources</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Verified Corpus</p>
+</div>
+</div>
+<!-- Nav Tabs from JSON -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary-container text-on-secondary-container rounded-xl transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm">Shamail</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-variant rounded-xl transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-label-sm text-label-sm">Timeline</span>
+</a>
+</nav>
+</div>
+<!-- Source Content Details (Contextual to the side nav) -->
+<div class="flex-1 overflow-y-auto p-gutter flex flex-col gap-4">
+<div class="bg-surface-container-lowest rounded-xl p-4 border border-outline-variant shadow-sm hover:shadow-[0_4px_20px_rgba(6,78,59,0.04)] transition-shadow">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-[10px] px-2 py-1 rounded-full uppercase tracking-wider">Active Source</span>
+<span class="material-symbols-outlined text-outline text-[16px]">bookmark</span>
+</div>
+<h3 class="font-label-md text-label-md font-semibold text-on-surface mb-1">Ash-Shama'il Al-Muhammadiyah</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-relaxed">
+                        Imam Tirmidhi's collection detailing the moral and physical character of the Prophet ﷺ.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest opacity-60 rounded-xl p-4 border border-outline-variant">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface mb-1">Seerah Ibn Hisham</h3>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-relaxed">
+                        The primary narrative timeline of events.
+                    </p>
+</div>
+</div>
+<div class="p-gutter border-t border-outline-variant bg-surface-container-low">
+<button class="w-full py-2 px-4 rounded-full border border-primary text-primary font-label-sm text-label-sm hover:bg-primary/5 transition-colors duration-200">
+                    View All Sources
+                </button>
+<div class="mt-4 flex justify-between px-2">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-label-sm text-[10px]">Settings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-label-sm text-[10px]">Help</span>
+</a>
+</div>
+</div>
+</aside>
+</div>
+<!-- Script for textarea auto-resize -->
+<script>
+        const textarea = document.querySelector('textarea');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    </script>
+</body></html>
