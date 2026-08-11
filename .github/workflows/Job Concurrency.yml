@@ -1,0 +1,24 @@
+name: Job Concurrency
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on:
+      - ubuntu-latest
+
+    concurrency:
+      group: deploy
+      cancel-in-progress: true
+
+    steps:
+      - name: Checkout Repository for JOB Concurrency
+        uses: actions/checkout@v6.1.0
+      - name: Install Dependencies
+        run: npm install
+      - name: build next js
+        run: npm run build
+      - name: Deploy APP
+        run: echo "Deploying APP"

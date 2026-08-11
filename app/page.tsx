@@ -69,22 +69,22 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="flex-1 flex pt-16 overflow-hidden h-[calc(100vh-64px)] relative w-full max-w-max mx-auto">
-        <main className="flex-1 flex flex-col h-full bg-surface-bright w-full relative min-w-0">
-          {messages.length > 0 ? (
-            <div className="bg-surface-container py-3 px-gutter border-b border-outline-variant flex items-center justify-center gap-2 z-10 shrink-0 shadow-sm">
-              <Icon name="info" size={18} className="text-outline" />
-              <p className="font-label-sm text-label-sm text-on-surface-variant">
-                Disclaimer: AI-generated content; no-fatwa policy applies.
-                Verify critical information.
-              </p>
-            </div>
-          ) : null}
+    <main className="flex items-center justify-center min-h-screen px-6 py-24">
+      <div className="max-w-4xl w-full text-center">
+        <header className="mb-10">
+          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight mb-4">
+            A Beautiful, Simple Homepage
+          </h1>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Clean starter layout for a Next.js app — responsive, accessible,
+            and minimal so you can focus on building.
+          </p>
+        </header>
 
-          <div
-            ref={scrollRef}
-            className="flex-1 overflow-y-auto chat-scroll px-gutter md:px-margin-desktop py-stack-md flex flex-col gap-stack-md scroll-smooth pb-32"
+        <div className="flex justify-center gap-4 mb-12">
+          <a
+            href="#"
+            className="inline-block bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-6 py-3 rounded-lg shadow-md hover:opacity-95"
           >
             {messages.length === 0 ? (
               <WelcomeSection onSelect={send} />
